@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": false,
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "script"
+  },
+  "extends": "~/themeLTE/.eslintrc.json",
+  "rules": {
+    "no-console": "off",
+    "strict": "error"
+  }
+}

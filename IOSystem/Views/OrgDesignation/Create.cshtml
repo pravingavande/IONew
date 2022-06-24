@@ -1,0 +1,86 @@
+﻿@model IOSystem.Models.OrgDesignation;
+
+<h2>
+    @{
+        ViewData["Title"] = "Create";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/themeLTE/dist/css/adminlte.min.css">
+
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Content Wrapper. Contains page content -->
+        <div class="wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row justify-content-center align-items-center">
+                        <!-- left column -->
+                        <div class="col col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <!-- jquery validation -->
+                            <div class="card card-primary">
+                                <div class="card-header row justify-content-center align-items-center">
+                                    <h3 class="card-title">Designation Master</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                <form method="POST" asp-controller="OrgDesignation" asp-action="Create">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label>Sr No</label>
+                                            <input type="number" min="0" class="form-control" placeholder="Enter Sr No" asp-for="SrNo" value="@ViewBag.MaxSrNo">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Designation Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter Designation Name" asp-for="DesignationName">
+                                        </div>
+                                        
+                                    </div>
+
+                                    <!-- /.card-body -->
+                                    <div class="card-footer row justify-content-center align-items-center">
+                                        <button type="submit" class="btn btn-primary" style='margin-right:16px'>Submit</button>
+                                        <a href="/OrgLetterCategory/Index" class="btn btn-danger" style='margin-right:16px'>Cancel</a>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!--/.col (left) -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="~/themeLTE/plugins/jquery/jquery.min.js"></script>
+
+</body>
+</html>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

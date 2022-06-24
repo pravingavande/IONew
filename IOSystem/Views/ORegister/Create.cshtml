@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewBag.Title = "Outward Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/daterangepicker/daterangepicker.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="~/themeLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- Bootstrap4 Duallistbox -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+    <!-- BS Stepper -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/bs-stepper/css/bs-stepper.min.css">
+    <!-- dropzonejs -->
+    <link rel="stylesheet" href="~/themeLTE/plugins/dropzone/min/dropzone.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="wrapper">
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title text-center">Outward Register</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form class="form-horizontal">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="inputORCode" class="col-sm-3 col-form-label">जावक नं. :</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" id="inputORCode" placeholder="OR Code" readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputIRCode" class="col-sm-3 col-form-label">आवक नं. :</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" id="inputIRCode" placeholder="IR Code">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="inputORDate" class="col-sm-3 col-form-label">जावक दिनांक :</label>
+                                            <div class="col-sm-9">
+                                                <input type="date" class="form-control" id="inputORDate" placeholder="OR Date">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="inputLtrDate" class="col-sm-3 col-form-label">पत्र दिनांक :</label>
+                                            <div class="col-sm-9">
+                                                <input type="date" class="form-control" id="inputLtrDate" placeholder="Letter Date">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <label for="inputSubject" class="col-sm-3 col-form-label">सोबतचे कागदपत्र :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <label for="inputGiveTo" class="col-sm-3 col-form-label">ज्यांना पा. त्यांचा पत्ता :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="inputGiveTo" placeholder="Given To">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="inputMobNo" class="col-sm-3 col-form-label">मोबाईल नं. :</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" id="inputMobNo" placeholder="Mob No">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        
+                                        <div class="form-group row">
+                                            <label for="inputEmail" class="col-sm-3 col-form-label">ई-मेल :</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <label for="inputSubject" class="col-sm-3 col-form-label">विषय / प्रकरण :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <label for="inputSectionUser" class="col-sm-3 col-form-label">कोन्ही दिले :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="inputSectionUser" placeholder="Section User">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                  
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group row">
+                                            <label for="inputLetterCategory" class="col-sm-3 col-form-label">पत्र प्रकार :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="inputLetterCategory" placeholder="Letter Category">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputExpenses" class="col-sm-3 col-form-label">टपाल खर्च :</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" id="inputExpenses" placeholder="Expenses">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-group row">
+                                            <label for="inputFileNo" class="col-sm-3 col-form-label">फाईल नं. :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="inputFileNo" placeholder="File No">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputAdmissionDate" class="col-sm-3 col-form-label">प्रवेश दिनांक :</label>
+                                            <div class="col-sm-9">
+                                                <input type="date" class="form-control" id="inputAdmissionDate" placeholder="Admission Date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <label for="inputRemark" class="col-sm-3 col-form-label">शेरा :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="inputRemark" placeholder="Remark">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /.card-body -->
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-info" style="margin-right:16px">Save</button>
+                                @*<button type="submit" class="btn btn-default" style="margin-right:16px">Cancel</button>*@
+                            </div>
+                            <!-- /.card-footer -->
+                        </form>
+                    </div>
+                </div>
+
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="~/themeLTE/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/themeLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="~/themeLTE/plugins/select2/js/select2.full.min.js"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <script src="~/themeLTE/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+    <!-- InputMask -->
+    <script src="~/themeLTE/plugins/moment/moment.min.js"></script>
+    <script src="~/themeLTE/plugins/inputmask/jquery.inputmask.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="~/themeLTE/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="~/themeLTE/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="~/themeLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="~/themeLTE/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <!-- BS-Stepper -->
+    <script src="~/themeLTE/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+    <!-- dropzonejs -->
+    <script src="~/themeLTE/plugins/dropzone/min/dropzone.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/themeLTE/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/themeLTE/dist/js/demo.js"></script>
+    <!-- Page specific script -->
+
+
+</body>
+</html>

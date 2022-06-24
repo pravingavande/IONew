@@ -1,0 +1,54 @@
+﻿@*@model IOSystem.Models.IRegister;
+
+<h2>
+    @{
+        ViewData["Title"] = "Edit InwardRegister";
+    }
+</h2>
+
+
+<form method="POST" asp-action="Edit">
+
+    <div class="row mb-3">
+        <input type="hidden" asp-for="DesignationCode" />
+
+        <label class="col-sm-3 col-form-label">OrgID</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="OrgID">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">SrNo</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="SrNo">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Designation Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="DesignationName">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Delete Flag</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="DeleteFlag">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Update</button>
+
+        </div>
+
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary">Cancel</a>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

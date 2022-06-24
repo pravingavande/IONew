@@ -1,0 +1,54 @@
+﻿@model IOSystem.Models.Register;
+
+<h2>
+    @{
+        ViewData["Title"] = "Edit Client";
+    }
+</h2>
+
+
+<form method="POST" asp-action="Edit">
+
+    <div class="row mb-3">
+        <input type="hidden" asp-for="RegisterID" />
+
+        <label class="col-sm-3 col-form-label">Sr No</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="SrNo">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">RType</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="RType">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Register Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="RegisterName">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Delete Flag</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="DeleteFlag">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Update</button>
+
+        </div>
+
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary">Cancel</a>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

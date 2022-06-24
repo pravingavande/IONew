@@ -1,0 +1,162 @@
+﻿@model IOSystem.Models.IRegister
+@{
+    ViewData["Title"] = "Index Page";
+    Layout = "~/Views/Shared/_LayoutORG.cshtml";
+}
+
+<br>
+
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>IRID</th>
+                <th>OrgID</th>
+                <th>IRCode</th>
+                <th>IRDate</th>
+                <th>LetterNo</th>
+
+                <th>LetterDate</th>
+                <th>SchoolName</th>
+                <th>MobileNo</th>
+                <th>EmailID</th>
+                <th>SubjectName</th>
+
+                <th>LastEmpID</th>
+                <th>SectionID</th>
+                <th>LetterCategoryCode</th>
+                <th>Duration</th>
+                <th>Remark</th>
+
+                <th>StatusCode</th>
+                <th>CompletedDate</th>
+                <th>ORNo</th>
+                <th>ORRemark</th>
+                <th>FYCode</th>
+                <th>LoginEmpID</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IRID</td>
+                    <td>@item.OrgID</td>
+                    <td>@item.IRCode</td>
+                    <td>@item.IRDate</td>
+                    <td>@item.LetterNo</td>
+                    <td>@item.LetterDate</td>
+                    <td>@item.SchoolName</td>
+                    <td>@item.MobileNo</td>
+                    <td>@item.EmailID</td>
+                    <td>@item.SubjectName</td>
+                    <td>@item.LastEmpID</td>
+                    <td>@item.SectionID</td>
+                    <td>@item.LetterCategoryCode</td>
+                    <td>@item.Duration</td>
+                    <td>@item.Remark</td>
+                    <td>@item.StatusCode</td>
+                    <td>@item.CompletedDate</td>
+                    <td>@item.ORNo</td>
+                    <td>@item.ORRemark</td>
+                    <td>@item.FYCode</td>
+                    <td>@item.LoginEmpID</td>
+
+                    <td>
+                        <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.IRID">Edit</a>
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IRID">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
+
+<link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="table-responsive">
+        <table id="myTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>IRID</th>
+                    <th>SchoolName</th>
+                    <th>SubjectName</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable(
+                {
+                    ajax: {
+                        url: "IRegister/DisplayRecord",
+                        type: "POST",
+                    },
+                    processing: true,
+                    serverSide: true,
+                    filter: true,
+                    columns: [
+                        { data: "IRID", name: "IRID" },
+                        { data: "SchoolName", name: "SchoolName" },
+                        { data: "SubjectName", name: "SubjectName" },
+                        {
+                            "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="/IRegister/Edit/' + full.IRID + '">Edit</a>'; }
+                        },
+                        {
+                            data: null,
+                            render: function (data, type, row) {
+                                return "<a href='#' class='btn btn-danger' onclick=DeleteData('" + row.IRID + "'); >Delete</a>";
+                            }
+                        },
+                    ],
+                }
+            );
+        });
+
+
+        function DeleteData(ID)
+        {
+            if (confirm("Are you sure you want to delete ...?"))
+            {
+                Delete(ID);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+    function Delete(ID)
+    {
+        var url = '@Url.Content("~/")' + "IRegister/Delete";
+        $.post(url, { ID: ID }, function (data)
+      {
+          if (data)
+          {
+              oTable = $('#myTable').DataTable();
+              oTable.draw();
+          }
+          else
+          {
+              alert("Something Went Wrong!");
+          }
+      });
+    }
+
+    </script>
+}
